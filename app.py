@@ -163,11 +163,11 @@ with tab3:
     col1, col2 = st.columns(2)
     
     with col1:
-        categorias_disponibles = ['Todas'] + sorted(df['product_category_name'].unique().tolist())
+        categorias_disponibles = ['Todas'] + sorted(df['product_category_name'].dropna().unique().tolist())
         categoria_sel = st.selectbox("Selecciona una Categoría", categorias_disponibles)
     
     with col2:
-        estados = ['Todos'] + sorted(df['order_status'].unique().tolist())
+        estados = ['Todos'] + sorted(df['order_status'].dropna().unique().tolist())
         estado_sel = st.selectbox("Selecciona Estatus de Pedido", estados)
     
     # Aplicar filtros
