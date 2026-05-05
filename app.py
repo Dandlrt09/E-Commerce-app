@@ -127,7 +127,7 @@ with tab2:
     ax2.set_xlabel('Categoría')
     ax2.set_ylabel('Precio (R$)')
     ax2.set_title('Distribución de Precios - Top 5 Categorías')
-    plt.xticks(rotation=45, labelsize=8)
+    ax2.tick_params(axis='x', labelsize=8)
     plt.tight_layout()
     st.pyplot(fig2)
     
@@ -153,7 +153,7 @@ with tab2:
             pct = count / len(df) * 100
             st.write(f"- **{status}**: {count:,} ({pct:.1f}%)")
 
-# Tab 3: Visualizaciones Interactivas
+# Tab 3: Visualizaciones Interactivas (fixed matplotlib compatibility)
 with tab3:
     st.header("📊 Visualizaciones Interactivas")
     st.write("Explora los datos con filtros y gráficos dinámicos.")
@@ -222,7 +222,7 @@ with tab3:
     ax6.set_ylabel('Ingresos Totales (R$)')
     ax6.set_title('Evolución de Ingresos Mensuales')
     ax6.grid(True, alpha=0.3)
-    plt.xticks(rotation=45)
+    ax6.tick_params(axis='x', labelsize=8)
     plt.tight_layout()
     st.pyplot(fig6)
 
